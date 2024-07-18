@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nashima</title>
+    <style>body{
+        background-color: rgb(209, 173, 241);
+        
+    }
+    .hello{
+        text-align: center;
+        font-family: arial;
+        font-size: 100px;
+        font-weight: bold;
+    
+    }
+    .text{
+        text-align: center;
+        font-family: arial;
+        font-size: xx-large;
+        font-weight: bold;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        
+    }
+    #noButton {
+    position: absolute;
+    margin-left: 150px;
+    transition: 0.5s;
+    }
+    
+    #yesButton {
+    position: absolute;
+    margin-right: 150px;}
+    .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    }
+    
+    .btn {
+    background-color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    }</style>
+</head>
+<body>
+    <h1 class="hello">Hello, Friend!</h1>
+    <p class="text">I need some help with choosing a picture. </p>
+    <p class="text">Will you help me? </p>
+    <div>
+        <div class = "buttons">
+            <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <script>
+                function nextPage() {
+                    window.location.href = "yes.html";
+                }
+                
+                function moveButton() {
+                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                    document.getElementById('noButton').style.left = `${x}px`;
+                    document.getElementById('noButton').style.top = `${y}px`;
+                }
+            </script> 
+        </div>
+    </div>
+    
+    
+</body>
+</html>
